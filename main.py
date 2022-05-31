@@ -109,12 +109,12 @@ async def GenPlot(ctx, ticker):
 @client.command()
 async def OrderByQuantity(ctx, ticker, qty): 
   rest_api.post_order(ticker, qty, null, buy, market)
-  #await ctx.send('Order
+  #await ctx.send('
 
 @client.command()
 async def OrderByPrice(ctx, ticker, price): 
-  rest_api.post_order(ticker, price, type = buy , market)
-  #await ctx.send('Order
+  rest_api.post_order(ticker, price, type: buy, market)
+  #await ctx.send('
 
 
 
