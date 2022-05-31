@@ -18,8 +18,8 @@ import matplotlib.colors
 from datetime import date
 from datetime import datetime, timedelta
 
-API_KEY = 'PK5WY4MNLUVP77YF5XWR'
-SECRET_KEY = 'pCF2WMotwJqhaOh9smGxcydGHerLfKk1e0CNpDgx'
+API_KEY = '***'
+SECRET_KEY = '***'
 rest_api = REST(API_KEY, SECRET_KEY, 'https://paper-api.alpaca.markets')
 
 
@@ -30,7 +30,7 @@ from discord.utils import get
 from discord.ext import commands, tasks
 from discord.ext.commands import has_permissions,  CheckFailure, check
 
-TOKEN = 'OTQzMDg0MDIyMzYyNDM1NTg0.Ygt5cA.u01CL06HpgjF9PlF092zN3frJRg'
+TOKEN = '***'
 
 intents = discord.Intents.default()
 
