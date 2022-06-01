@@ -104,19 +104,22 @@ async def GenPlot(ctx, ticker):
   #await ctx.send(file=discord.File('output.png'))
   await ctx.send(file=discord.File['output.png'], file1=discord.File['output2.png'], file2=discord.File['output3.png'])
   
-                 
-
+ 
 @client.command()
 async def OrderByQuantity(ctx, ticker, qty): 
-  rest_api.post_order(ticker, qty, null, buy, market)
-  #await ctx.send('
+  rest_api.submit_order(symbol=ticker,qty = qty, type="market", side="buy", time_in_force="day")
 
 @client.command()
 async def OrderByPrice(ctx, ticker, price): 
-  rest_api.post_order(ticker, price, type: buy, market)
-  #await ctx.send('
+  rest_api.submit_order(symbol=ticker,notional=price, type="market", side="buy", time_in_force="day")
 
+@client.command()
+async def SellByQuantity(ctx, ticker, qty): 
+  rest_api.submit_order(symbol=ticker,qty = qty, type="market", side="sell", time_in_force="day")
 
+@client.command()
+async def SellByPrice(ctx, ticker, price): 
+  rest_api.submit_order(symbol=ticker,notional=price, type="market", side="sell", time_in_force="day")
 
 
 client.run(TOKEN)
