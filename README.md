@@ -1,4 +1,4 @@
-**Under Work**
+**——Under Work**
 
 # DiscordTradingBot
 Creating a Discord Bot to trade through Alpaca
