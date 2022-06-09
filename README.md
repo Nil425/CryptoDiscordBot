@@ -9,7 +9,7 @@ Then, create a discord bot...
 
 Then, include the following discord and alpaca credentials into your code
 
-THen, use the code from the technical analysis or trading bot to run the code on your local computer
+THen, use the code from the technical analysis or trading bot to run the code on your local computer. If you'd like one bot to have all the plot generator and ordering functionalities, combine the bodies of the two files
 
 Finally, once running the code, go to your discord bot and type !*command* *args* to run
 
