@@ -9,7 +9,7 @@ Then, create a discord bot...
 
 Then, include the following discord and alpaca credentials into your code
 
-THen, use the code from files ___ and ___ to run the code on your local computer
+THen, use the code from the technical analysis or trading bot to run the code on your local computer
 
 Finally, once running the code, go to your discord bot and type !*command* *args* to run
 
