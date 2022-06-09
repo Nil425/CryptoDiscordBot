@@ -132,7 +132,7 @@ async def show_rsi(ctx, ticker):
     await ctx.send(file=discord.File('output3.png'))
 
 
-#commands to place orders
+##*commands to place orders*
 @client.command()
 async def market_buy_by_quantity(ctx, ticker, qty):
     rest_api.submit_order(symbol=ticker,
