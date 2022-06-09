@@ -53,7 +53,8 @@ def retrieve_data(arg1):
     return rest_api.get_bars(arg1, TimeFrame.Day, dstr, d2str).df
 
 
-#Methods generating various technical plots
+#METHODS GENERRATING THE VARIOUS TECHNICAL PLOTS
+
 def gen_moving_averages(arg1):
     stock_bars = retrieve_data(arg1)
 
@@ -109,7 +110,7 @@ def gen_rsi(arg1):
     plt.savefig("output3.png")
 
 
-#commands to invoke the various technical plots
+#COMMANDS TO INVOKE VARIOUS TECHNICAL PLOTS
 
 
 @client.command()
@@ -132,7 +133,8 @@ async def show_rsi(ctx, ticker):
     await ctx.send(file=discord.File('output3.png'))
 
 
-##*commands to place orders*
+#COMMANDS TO PLACE ORDERS
+
 @client.command()
 async def market_buy_by_quantity(ctx, ticker, qty):
     rest_api.submit_order(symbol=ticker,
