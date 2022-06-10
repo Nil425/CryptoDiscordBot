@@ -1,5 +1,3 @@
-**——Under Work**
-
 # DiscordTradingBot
 Creating Discord Bots that a) uses Pandas_TA commands for creating technical analysis plots from Alpaca Market Data and b) sends various types of orders using an Alpaca account.
 
