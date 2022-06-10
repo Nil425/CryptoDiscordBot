@@ -11,9 +11,9 @@ Use the code from this repo on your local machine, substituting the Alpaca key, 
 
 Then, use the code from the technical analysis or trading bot to run the code on your local computer. If you'd like one bot to have all the plot generator and ordering functionalities, combine the bodies of the two files.
 
-To run commands, activate the bot and type !*command* *args* to run. 
+To run commands, activate the bot and type !(command) (args) to run. 
 
-Specific TA format: !show_*indicator type* *ticker
+Specific TA format: !show_(indicator type) (ticker)
 example: !show_moving_averages tsla
 
 
