@@ -1,12 +1,12 @@
 #SETUP
 import pip
 import asyncio
-pip.main(['install', 'alpaca_trade_api'])
-pip.main(['install', 'backtrader'])
-pip.main(['install', 'matplotlib'])
-pip.main(['install', 'plotly'])
-pip.main(['install', 'talib-binary'])
-pip.main(['install', 'pandas_ta'])
+# pip.main(['install', 'alpaca_trade_api'])
+# pip.main(['install', 'backtrader'])
+# pip.main(['install', 'matplotlib'])
+# pip.main(['install', 'plotly'])
+# pip.main(['install', 'talib-binary'])
+# pip.main(['install', 'pandas_ta'])
 
 from alpaca_trade_api.rest import REST, TimeFrame
 from alpaca_trade_api.stream import Stream
@@ -167,7 +167,7 @@ async def show_volatility(ctx, ticker):
     await ctx.send(file=discord.File('output4.png'))
     await ctx.send(file=discord.File('output5.png'))
 
-client.command()
+@client.command()
 async def show_trend(ctx, ticker):
     gen_trend(ticker)
     await ctx.send(file=discord.File('output2.png'))
