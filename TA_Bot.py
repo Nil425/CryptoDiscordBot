@@ -53,7 +53,7 @@ def retrieve_data(arg1):
     return rest_api.get_bars(arg1, TimeFrame.Day, dstr, d2str).df
 
 
-#METHODS GENERATING THE VARIOUS TECHNICAL PLOTS
+# METHODS GENERATING THE VARIOUS TECHNICAL PLOTS
 
 def gen_moving_averages(arg1):
     stock_bars = retrieve_data(arg1)
@@ -173,3 +173,5 @@ async def show_trend(ctx, ticker):
     await ctx.send(file=discord.File('output2.png'))
     await ctx.send(file=discord.File('output3.png'))
     #await ctx.send(file=discord.File['output3.png'])
+
+client.run(TOKEN)
