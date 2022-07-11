@@ -1,26 +1,17 @@
-#SETUP
-import pip
 import asyncio
-# pip.main(['install', 'alpaca_trade_api'])
-# pip.main(['install', 'backtrader'])
-# pip.main(['install', 'matplotlib'])
-# pip.main(['install', 'plotly'])
-# pip.main(['install', 'talib-binary'])
-# pip.main(['install', 'pandas_ta'])
 
 from alpaca_trade_api.rest import REST, TimeFrame
-from alpaca_trade_api.stream import Stream
 
-import pandas as pd
 import pandas_ta as ta
 from matplotlib import pyplot as plt
 import matplotlib.colors 
 from datetime import date
 from datetime import datetime, timedelta
 
-API_KEY = '***'
-SECRET_KEY = '***'
-rest_api = REST(API_KEY, SECRET_KEY, 'https://paper-api.alpaca.markets')
+from config import ALPACA_KEY, ALPACA_SECRET, DISCORD_TOKEN
+
+
+rest_api = REST(ALPACA_KEY, ALPACA_SECRET, 'https://paper-api.alpaca.markets')
 
 
 import os
@@ -30,7 +21,6 @@ from discord.utils import get
 from discord.ext import commands, tasks
 from discord.ext.commands import has_permissions,  CheckFailure, check
 
-TOKEN = '***'
 
 intents = discord.Intents.default()
 
@@ -174,4 +164,4 @@ async def show_trend(ctx, ticker):
     await ctx.send(file=discord.File('output3.png'))
     #await ctx.send(file=discord.File['output3.png'])
 
-client.run(TOKEN)
+client.run(DISCORD_TOKEN)
