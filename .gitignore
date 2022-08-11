@@ -1,0 +1,5 @@
+# Secrets
+config.py
+
+# Pycharm files
+.idea/*

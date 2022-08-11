@@ -3,7 +3,7 @@ import pip
 import discord
 import discord.ext
 from discord.ext import commands, tasks
-pip.main(['install', 'alpaca_trade_api'])
+# pip.main(['install', 'alpaca_trade_api'])
 
 from alpaca_trade_api.rest import REST, TimeFrame
 

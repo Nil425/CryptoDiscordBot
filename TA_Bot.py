@@ -1,26 +1,17 @@
-#SETUP
-import pip
 import asyncio
-pip.main(['install', 'alpaca_trade_api'])
-pip.main(['install', 'backtrader'])
-pip.main(['install', 'matplotlib'])
-pip.main(['install', 'plotly'])
-pip.main(['install', 'talib-binary'])
-pip.main(['install', 'pandas_ta'])
 
 from alpaca_trade_api.rest import REST, TimeFrame
-from alpaca_trade_api.stream import Stream
 
-import pandas as pd
 import pandas_ta as ta
 from matplotlib import pyplot as plt
 import matplotlib.colors 
 from datetime import date
 from datetime import datetime, timedelta
 
-API_KEY = '***'
-SECRET_KEY = '***'
-rest_api = REST(API_KEY, SECRET_KEY, 'https://paper-api.alpaca.markets')
+from config import ALPACA_KEY, ALPACA_SECRET, DISCORD_TOKEN
+
+
+rest_api = REST(ALPACA_KEY, ALPACA_SECRET, 'https://paper-api.alpaca.markets')
 
 
 import os
@@ -30,7 +21,6 @@ from discord.utils import get
 from discord.ext import commands, tasks
 from discord.ext.commands import has_permissions,  CheckFailure, check
 
-TOKEN = '***'
 
 intents = discord.Intents.default()
 
@@ -53,7 +43,7 @@ def retrieve_data(arg1):
     return rest_api.get_bars(arg1, TimeFrame.Day, dstr, d2str).df
 
 
-#METHODS GENERATING THE VARIOUS TECHNICAL PLOTS
+# METHODS GENERATING THE VARIOUS TECHNICAL PLOTS
 
 def gen_moving_averages(arg1):
     stock_bars = retrieve_data(arg1)
@@ -167,9 +157,11 @@ async def show_volatility(ctx, ticker):
     await ctx.send(file=discord.File('output4.png'))
     await ctx.send(file=discord.File('output5.png'))
 
-client.command()
+@client.command()
 async def show_trend(ctx, ticker):
     gen_trend(ticker)
     await ctx.send(file=discord.File('output2.png'))
     await ctx.send(file=discord.File('output3.png'))
     #await ctx.send(file=discord.File['output3.png'])
+
+client.run(DISCORD_TOKEN)
